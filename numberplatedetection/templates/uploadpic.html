@@ -1,0 +1,279 @@
+<!--<!DOCTYPE html>-->
+<!--{% load static %}-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<title>upload image</title>-->
+<!--    <style>-->
+<!--.file-upload input[type='file'] {-->
+<!--  display: none;-->
+<!--}-->
+
+<!--/*-->
+<!--*-->
+<!--* ==========================================-->
+<!--* FOR DEMO PURPOSES-->
+<!--* ==========================================-->
+<!--*-->
+<!--*/-->
+
+<!--body {-->
+<!--  background: #00B4DB;-->
+<!--  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);-->
+<!--  background: linear-gradient(to right, #0083B0, #00B4DB);-->
+<!--  height: 100vh;-->
+<!--}-->
+
+<!--.rounded-lg {-->
+<!--  border-radius: 1rem;-->
+<!--}-->
+
+<!--.custom-file-label.rounded-pill {-->
+<!--  border-radius: 50rem;-->
+<!--}-->
+
+<!--.custom-file-label.rounded-pill::after {-->
+<!--  border-radius: 0 50rem 50rem 0;-->
+<!--}-->
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<section>-->
+<!--  <div class="container p-5">-->
+<!--    &lt;!&ndash; For demo purpose &ndash;&gt;-->
+<!--    <div class="row mb-5 text-center text-white">-->
+<!--      <div class="col-lg-10 mx-auto">-->
+<!--        <h1 class="display-4">File upload button </h1>-->
+<!--        <p class="lead">Build a simple file upload button using Bootstrap 4.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; End &ndash;&gt;-->
+
+
+<!--    <div class="row">-->
+<!--      <div class="col-lg-5 mx-auto">-->
+<!--        <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">-->
+
+<!--          &lt;!&ndash; Default bootstrap file upload&ndash;&gt;-->
+
+<!--          <h6 class="text-center mb-4 text-muted">-->
+<!--            You can use default Bootstrap file upload-->
+<!--          </h6>-->
+
+<!--          <div class="custom-file overflow-hidden rounded-pill mb-5">-->
+<!--            <input id="customFile" name = "image" type="file" class="custom-file-input rounded-pill">-->
+<!--            <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; End &ndash;&gt;-->
+
+<!--          <h6 class="text-center mb-4 text-muted">-->
+<!--            Or a custom button that launches file browser-->
+<!--          </h6>-->
+
+<!--          &lt;!&ndash; Custom bootstrap upload file&ndash;&gt;-->
+<!--          <label for="fileUpload" class="file-upload btn btn-primary btn-block rounded-pill shadow"><i class="fa fa-upload mr-2"></i>Browse for file ...-->
+<!--                        <input id="fileUpload" type="file">-->
+<!--                    </label>-->
+<!--          &lt;!&ndash; End &ndash;&gt;-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+  font-family: sans-serif;
+  background-color: #eeeeee;
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+    </style>
+</head>
+<body>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<div class="file-upload">
+  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+ <form action="uploadimage" method="GET">
+  <div class="image-upload-wrap">
+    <input class="file-upload-input" type='file' onchange="readURL(this);" name="image" accept="image/*" />
+    <div class="drag-text">
+      <h3>Drag and drop a file or select add Image</h3>
+    </div>
+  </div>
+
+  <div class="file-upload-content">
+    <input type="hidden"  value="" id="a1">
+    <img class="file-upload-image" src="#" id="a2" alt="your image"  />
+    <div class="image-title-wrap"><br>
+    Location: <input type ="text" name = "loc"><br>
+<button type="submit" class="remove-image">Upload<span class="image-title">Uploaded Image</span></button>
+    </div>
+  </div>
+      </form>
+<!--      <button type="button" onclick="removeUpload()" class="remove-image">Upload<span class="image-title">Uploaded Image</span></button>-->
+<!--       <button type="button" onclick="uploadimage()" >UPLOAD</button>-->
+
+    </div>
+
+<script>
+    function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.image-upload-wrap').hide();
+
+      $('.file-upload-image').attr('src', e.target.result);
+      $('.file-upload-content').show();
+
+      $('.image-title').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+
+function removeUpload() {
+  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+  $('.file-upload-content').hide();
+  $('.image-upload-wrap').show();
+}
+$('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+
+});
+     var a=document.getElementById("a2");
+var b=document.getElementById("a1");
+var a3=a.getAttribute("src");
+a4.setattribute("value",a3);
+</script>
+</body>
+
+</html>
